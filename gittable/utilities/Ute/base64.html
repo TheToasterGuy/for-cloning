@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Base64 to TXT Converter | GoGuardian Store</title>
+
+
+
+<style>
+
+#adspace {
+
+width: 315px;
+
+margin: 0 auto;
+
+}
+
+#adspace img {
+
+float: left;
+
+margin-right: 5px;
+
+margin-bottom: 5px;
+
+}
+
+</style>
+
+<div id="adspace">
+
+<script type="text/javascript">
+
+rotate(ads);
+
+</script>
+
+</div><br>
+
+    <script>
+
+        function handleFileSelect(event) {
+
+            const file = event.target.files[0];
+
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+
+                const base64 = btoa(event.target.result);
+
+                const link = document.createElement('a');
+
+                link.href = 'data:text/plain;base64,' + base64;
+
+                link.download = file.name + '.txt';
+
+                link.click();
+
+            };
+
+            reader.readAsDataURL(file);
+
+        }
+
+    </script>
+
+</head>
+
+<body> <input type="file" onchange="handleFileSelect(event)"> </body>
+
+</html>
